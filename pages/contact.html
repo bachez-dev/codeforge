@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeForge | Contact us</title>
+
+  <link rel="stylesheet" href="../pagecss/contact.css">
+</head>
+
+<body>
+  <!-- Navigation Hero Container -->
+
+  <section class="navigation-hero-section">
+
+    <!-- Navigation Start -->
+
+    <nav class="navigation-bar">
+      <div class="logo">
+        <a href="index.html">CodeForge</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="#"><button class="login-btn">Get Started</button></a>
+      </div>
+    </nav>
+
+    <!-- Navigation End -->
+
+    <!-- Hero Section Start -->
+
+    <div class="hero-content">
+      <div class="content">
+        <h1>Get in touch With us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At doloremque ut nulla error harum ex iste expedita
+          in repellat mollitia.</p>
+      </div>
+      <div class="map-container">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section End -->
+
+  <!-- contact details start -->
+
+  <section class="contact-container">
+    <div class="contact-details">
+      <div class="chat-support">
+        <div class="icon"></div>
+        <h2>Chat to Sales</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias error maxime</p>
+        <button>Get in touch</button>
+      </div>
+      <div class="chat-support">
+        <div class="icon"></div>
+        <h2>Chat to Sales</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias error maxime</p>
+        <button>Get in touch</button>
+      </div>
+      <div class="chat-support">
+        <div class="icon"></div>
+        <h2>Chat to Sales</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias error maxime</p>
+        <button>Get in touch</button>
+      </div>
+      <div class="chat-support">
+        <div class="icon"></div>
+        <h2>Chat to Sales</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias error maxime</p>
+        <button>Get in touch</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact details -->
+
+  <!-- Frequently asked Questions -->
+  <section class="FAQ">
+    <div class="faq-container">
+      <div class="faq-heading">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="questions">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How can I contact customer support?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            You can reach us by email at support@example.com or call us at +254 700 123 456.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Where are your offices located?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Our main office is located at 123 Real Estate Avenue, Nairobi, Kenya.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer property management services?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! We offer full property management services including tenant sourcing, rent collection, and maintenance.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer property management services?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! We offer full property management services including tenant sourcing, rent collection, and maintenance.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer property management services?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! We offer full property management services including tenant sourcing, rent collection, and maintenance.
+          </div>
+        </div>
+
+      </div>
+  </section>
+  <!-- Frequently asked Questions end-->
+
+  <!-- cta FAQ -->
+
+  <section class="cta-faq-container">
+
+  </section>
+
+  <!-- cta FAQ end -->
+
+  <!-- CTA footer start -->
+
+  <section class="Cta-footer-container">
+
+    <div class="cta-container">
+      <h2>Stay inspired Join Our Newsletter</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tenetur architecto fugiat facere.</p>
+      <div class="cta-input-btn">
+        <input type="text" placeholder="Email" class="Cta-input">
+        <button>Subscribe</button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-header">
+        <div class="footer-head">
+          <h3>Codeforge</h3>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Listings</a></li>
+          </ul>
+        </div>
+        <div class="email">
+          <p>Codeforge@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-name">
+        <h1>CodeForge</h1>
+      </div>
+    </div>
+
+  </section>
+
+
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      item.querySelector(".faq-question").addEventListener("click", () => {
+        faqItems.forEach(el => {
+          if (el !== item) {
+            el.classList.remove("active");
+          }
+        });
+
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,31 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codeforge</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
 </head>
+
 <body>
 
-  <!-- Navigation Start -->
-
   <section class="navigation-hero-section">
+
+    <!-- Navigation Start -->
+
     <nav class="navigation-bar">
       <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Codeforge Logo">CodeForge</a>
+        <a href="index.html">CodeForge</a>
       </div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li><a href="./pages/pricing.html">Pricing</a></li>
+        <li><a href="./pages/contact.html">Contact</a></li>
       </ul>
       <div class="auth-buttons">
-        <button class="login-btn">Login</button>
-        <button class="signup-btn">Sign Up</button>
+        <a href="#"><button class="login-btn">Get Started</button></a>
+      </div>
+    </nav>
+
+    <!-- Navigation End -->
+
+    <!-- Hero Section Start -->
+
+    <div class="hero-content">
+      <div class="content">
+        <h1>Tech / Web</h1>
+        <h1 class="dev">Development</h1>
+        <p class="dev-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quibusdam exercitationem
+          repellendus in quia eos neque ut!</p>
+        <h1>Agency</h1>
       </div>
 
+      <div class="service-one">
+        <p>#web development</p>
+        <p>#UI/UX development</p>
+        <p>#SaaS development</p>
+        <p>#App development</p>
+      </div>
+
+    </div>
+
+    <!-- Hero Section End -->
+
   </section>
-  
+
+
+  <!-- about us section -->
+
+  <section class="about-us-container">
+    <div class="about-us-content">
+      <div class="about-heading">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+          deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        <h1>ABOUT</h1>
+      </div>
+
+
+      <div class="about-images">
+        <div class="about-image-one"></div>
+        <div class="about-image-two"></div>
+        <div class="about-image-three"></div>
+      </div>
+
+      <div class="about-footer">
+        <h1>US</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia recusandae suscipit velit, dignissimos
+          explicabo nihil fuga magni! Veritatis accusantium corrupti dolorum repudiandae enim provident itaque?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- about us section end -->
+
+  <!-- services section -->
+
+  <section class="gallery-container">
+    <div class="gallery-container-heading">
+      <p>Behind the Designs
+      <p>
+      <h1>What We offer</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="service-containers">
+      <div id="ring">
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>Web Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>UI/UX Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>SaaS Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>App Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>Web Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>UI/UX Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>SaaS Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>App Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>Web Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+
+        <div class="service-card img">
+          <div class="service-icon service-icon-one"></div>
+          <h2>App Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
+            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="service-footer">
+      <p>#Web development</p>
+      <p>#SaaS development</p>
+      <p>#UI/UX Design</p>
+      <p>#Mobile development</p>
+    </div>
+
+    <div class="vignette"></div>
+    <div id="dragger"></div>
+  </section>
+
+  <!-- projects section -->
+
+  <section class="projects-section">
+
+    <div class="projects-header">
+      <p>Portfolio</p>
+      <h1>Latest Works</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, numquam?</p>
+    </div>
+
+    <div class="projects-container">
+      <div class="project project-one">
+        <div class="number">
+          <h1>01</h1>
+        </div>
+        <div class="content-one">
+          <h4>NovaTech website</h4>
+          <h2>Startup Landing Page</h2>
+          <p>Problem - Solution - Result</p>
+        </div>
+        <div class="content-two">
+          <p>The best website from codeForge words from clients.</p>
+        </div>
+      </div>
+      <div class="project project-two">
+        <div class="number">
+          <h1>02</h1>
+        </div>
+        <div class="content-one">
+          <h4>NovaTech website</h4>
+          <h2>Startup Landing Page</h2>
+          <p>Problem - Solution - Result</p>
+        </div>
+        <div class="content-two">
+          <p>The best website from codeForge words from clients.</p>
+        </div>
+      </div>
+      <div class="project project-three">
+        <div class="number">
+          <h1>03</h1>
+        </div>
+        <div class="content-one">
+          <h4>NovaTech website</h4>
+          <h2>Startup Landing Page</h2>
+          <p>Problem - Solution - Result</p>
+        </div>
+        <div class="content-two">
+          <p>The best website from codeForge words from clients.</p>
+        </div>
+      </div>
+      <div class="project project-four">
+        <div class="number">
+          <h1>04</h1>
+        </div>
+        <div class="content-one">
+          <h4>NovaTech website</h4>
+          <h2>Startup Landing Page</h2>
+          <p>Problem - Solution - Result</p>
+        </div>
+        <div class="content-two">
+          <p>The best website from codeForge words from clients.</p>
+        </div>
+      </div>
+      <div class="project project-five">
+        <div class="number">
+          <h1>05</h1>
+        </div>
+        <div class="content-one">
+          <h4>NovaTech website</h4>
+          <h2>Startup Landing Page</h2>
+          <p>Problem - Solution - Result</p>
+        </div>
+        <div class="content-two">
+          <p>The best website from codeForge words from clients.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="testimonials-container">
+    <div class="testimonials-heading">
+      <p>Testimonials</p>
+      <h1>Testimonials</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, assumenda?</p>
+    </div>
+    <div class="testimonials" id="testimonials-track">
+
+      <div class="testimonials-card">
+        <h1>"</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dicta eos, illum doloremque, facilis quasi
+          voluptates eaque debitis molestiae dolores dolore perferendis repellat molestias. Voluptatem officiis a
+          recusandae officia iure?</p>
+        <div class="testimonials-details">
+          <div class="testimonial-image"></div>
+          <div class="name">Jane Foster</div>
+        </div>
+      </div>
+
+      <div class="testimonials-card">
+        <h1>"</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dicta eos, illum doloremque, facilis quasi
+          voluptates eaque debitis molestiae dolores dolore perferendis repellat molestias. Voluptatem officiis a
+          recusandae officia iure?</p>
+        <div class="testimonials-details">
+          <div class="testimonial-image"></div>
+          <div class="name">Jane Foster</div>
+        </div>
+      </div>
+
+      <div class="testimonials-card">
+        <h1>"</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dicta eos, illum doloremque, facilis quasi
+          voluptates eaque debitis molestiae dolores dolore perferendis repellat molestias. Voluptatem officiis a
+          recusandae officia iure?</p>
+        <div class="testimonials-details">
+          <div class="testimonial-image"></div>
+          <div class="name">Jane Foster</div>
+        </div>
+      </div>
+
+      <div class="testimonials-card">
+        <h1>"</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dicta eos, illum doloremque, facilis quasi
+          voluptates eaque debitis molestiae dolores dolore perferendis repellat molestias. Voluptatem officiis a
+          recusandae officia iure?</p>
+        <div class="testimonials-details">
+          <div class="testimonial-image"></div>
+          <div class="name">Jane Foster</div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+
+  <section class="pricing-container">
+    <div class="pricing-heading">
+      <p>Pricing</p>
+      <h1>Pricing</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, aliquam.</p>
+    </div>
+    <div class="pricing-cards">
+      <div class="subscription card-one">
+        <h2>Starter</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="price">
+          $29
+        </p>
+        <ul class="features">
+          <li class="included">One template</li>
+          <li class="included">Basic Customization Options</li>
+          <li class="included">Responsive Design</li>
+          <li class="included">Email Support</li>
+          <li class="not-included">Responsive Design</li>
+          <li class="not-included">Email Support</li>
+        </ul>
+        <button>Try Now</button>
+      </div>
+      <div class="subscription card-two">
+        <h2>Business</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="price">
+          $129
+        </p>
+        <ul class="features">
+          <li class="included">One template</li>
+          <li class="included">Basic Customization Options</li>
+          <li class="included">Responsive Design</li>
+          <li class="included">Email Support</li>
+          <li class="not-included">Responsive Design</li>
+          <li class="not-included">Email Support</li>
+        </ul>
+        <button>Try Now</button>
+      </div>
+      <div class="subscription card-three">
+        <h2>Pro</h2>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <p class="price">
+          $79
+        </p>
+        <ul class="features">
+          <li class="included">One template</li>
+          <li class="included">Basic Customization Options</li>
+          <li class="included">Responsive Design</li>
+          <li class="included">Email Support</li>
+          <li class="not-included">Responsive Design</li>
+          <li class="not-included">Email Support</li>
+        </ul>
+        <button>Try Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section">
+    <div class="contact-heading">
+      <p>Contact</p>
+      <h1>Contact</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, aliquam.</p>
+    </div>
+
+    <div class="contact-information">
+      <div class="contact-form">
+        <form action="">
+          <input type="text" placeholder="Name"><br><br>
+          <input type="text" placeholder="Email"><br><br>
+          <div class="text-area">
+            <textarea name="" id="message"></textarea>
+          </div><br>
+
+          <button>Send Message</button>
+        </form>
+      </div>
+      <div class="contact-details">
+        <p><b>Email:</b> <span class="email">hellocodeforge@gmail.com</span></p>
+        <p><b>Phone:</b> <span class="no">+292 645637</span></p>
+        <div class="socials">
+          <p><b>Socials:</b></p>
+          <p>LinkedIn</p>
+          <p>Github</p>
+          <p>Twitter</p>
+        </div>
+        <div class="map">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-container">
+    <footer>
+      <div class="footer-top">
+        <div class="sec-one">
+          <h2>
+            Coding futuristic web experiences
+          </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, itaque?</p>
+          <input type="text" placeholder="Email">
+          <button>Subscribe</button>
+        </div>
+        <div class="links">
+          <div class="quick-links">
+            <h3>Quick-links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-services">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web dev</a></li>
+              <li><a href="#">UI/UX design</a></li>
+              <li><a href="#">Mobile dev</a></li>
+              <li><a href="#">SaaS dev</a></li>
+              <li><a href="#">Maintenance</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="#">Location</a></li>
+              <li><a href="#">Phone</a></li>
+              <li><a href="#">Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="horizontal">
+        <hr>
+      </div>
+      <div class="footer-middle">
+
+        <div class="copy">&copy;copyright</div>
+        <div class="socials">
+          <p>linkedIn</p>
+          <p>Twitter</p>
+          <p>Github</p>
+        </div>
+      </div>
+
+
+    </footer>
+
+    <div class="footer-name">
+      <h1>Codeforge</h1>
+    </div>
+  </section>
+  <script src="script.js"></script>
+
 </body>
+
 </html>

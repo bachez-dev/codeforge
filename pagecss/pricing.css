@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation Hero Start */
+
+.navigation-hero-section {
+  width: 100%;
+  height: 70vh;
+  /* background: radial-gradient(circle,
+      #0D0D0D 0%,
+      #240046 35%,
+      #7B2CBF 61%,
+      #FF00FF 100%); */
+  backdrop-filter: blur(10px);
+
+  .navigation-bar {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .logo {
+    font-family: 'Audiowide', cursive;
+    font-size: 16px;
+    color: #101010;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #FF00FF;
+      transform: scale(1.1);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+
+    li {
+      a {
+        text-decoration: none;
+        color: #101010;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #FF00FF;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 20px;
+
+    .login-btn {
+      padding: 6px 20px;
+      border: none;
+      border-radius: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-btn {
+      background: #101010;
+      color: #fff;
+      border: 2px solid #fff;
+      font-weight: 600;
+
+      &:hover {
+        background: #FF00FF;
+        border-color: #FF00FF;
+        color: #fff;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .hero-content {
+    width: 95%;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    color: #101010;
+    position: relative;
+
+
+    h1 {
+      font-family: 'Audiowide', sans-serif;
+      font-size: 70px;
+      font-weight: 700;
+      margin-top: -150px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 12px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subscription-time {
+      width: 200px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: #101010;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 6px 25px;
+      border-radius: 20px;
+      border: none;
+      font-size: 12px;
+    }
+
+  }
+}
+
+/* Navigation - hero End */
+
+/* Subscription time */
+
+.pricing-container {
+  width: 100%;
+  height: 80vh;
+
+  .pricing-cards {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+
+    .subscription {
+      width: 430px;
+      height: 400px;
+      background: #E5E7EB;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 60px;
+      position: relative;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scaleY(1.1);
+      }
+
+      p {
+        font-size: 11px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 48px;
+        font-family: 'Audiowide', sans-serif;
+      }
+
+      ul {
+        list-style-type: none;
+        margin-top: 10px;
+        font-size: 11px;
+        line-height: 2;
+        margin-bottom: 20px;
+        padding-left: 30px;
+      }
+
+      .features li.included::before {
+        content: "✔";
+        color: #101010;
+        position: absolute;
+        left: 60px;
+      }
+
+      .features li.not-included::before {
+        content: "❌";
+        color: #101010;
+        position: absolute;
+        left: 58px;
+      }
+
+      button {
+        padding: 6px 110px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        border: none;
+        background: #101010;
+        color: #fff;
+      }
+    }
+
+    .card-two {
+      background: #101010;
+      color: #fff;
+
+      button {
+        background: #fff;
+        color: #101010;
+      }
+
+      .features li.included::before {
+        content: "✔";
+        color: #fff;
+        position: absolute;
+        left: 35px;
+      }
+
+      .features li.not-included::before {
+        content: "❌";
+        color: #fff;
+        position: absolute;
+        left: 30px;
+      }
+    }
+  }
+}
+
+/* Add ons container */
+
+.add-ons-container {
+  width: 100%;
+  height: 100vh;
+  padding: 40px 0;
+  background: radial-gradient(circle,
+      #0A0F1C 0%,
+      #0A0A0A 100%);
+
+  .add-ons-header {
+    width: 90%;
+    margin: 0 auto;
+    height: 130px;
+    text-align: center;
+    line-height: 2;
+    color: white;
+
+    p {
+      font-size: 11px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-family: 'Audiowide', sans-serif;
+    }
+  }
+
+  .add-ons-content {
+    width: 70%;
+    margin: 0 auto;
+    gap: 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    position: relative;
+
+    .add-ons-card {
+      width: 400px;
+      height: 350px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding-top: 30px;
+      padding-left: 40px;
+
+      p {
+        font-size: 11px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 48px;
+        font-family: 'Audiowide', sans-serif;
+      }
+
+      ul {
+        list-style-type: none;
+        margin-top: 10px;
+        font-size: 11px;
+        line-height: 2;
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+
+
+      button {
+        padding: 6px 130px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        border: none;
+        background: #fff;
+        color: #101010;
+      }
+    }
+  }
+}
+
+/* Frequently Asked Questions */
+
+.FAQ {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f8fa;
+
+  .faq-container {
+    width: 90%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .faq-heading {
+    width: 100%;
+    height: 70px;
+    text-align: center;
+  }
+
+  .questions {
+    width: 90%;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .faq-item {
+    width: 700px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #101010;
+    background: #ffffff;
+    transition: background 0.3s ease;
+  }
+
+  .faq-question:hover {
+    background: #e0ecff;
+  }
+
+  .faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.6;
+    background: #fff;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    /* adjust depending on answer size */
+    padding: 15px 20px;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    /* rotate arrow to point down */
+  }
+
+}
+
+/* CTA FOOTER CONTAINER */
+
+.Cta-footer-container {
+  width: 100%;
+  height: 110vh;
+  padding: 50px 0;
+  background: linear-gradient(to bottom, white 60%, #E581E5);
+
+  .cta-container {
+    width: 90%;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 12px;
+      width: 45ch;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input {
+      width: 200px;
+      height: 30px;
+      padding: 15px;
+      outline: none;
+      border: none;
+      border-radius: 20px;
+      background: #E5E7EB;
+      font-size: 11px;
+    }
+
+    button {
+      width: 100px;
+      height: 30px;
+      border: none;
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background: #101010;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    margin: 0 auto;
+    height: 305px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .footer-header {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      height: 90px;
+
+      h3 {
+        font-size: 13px;
+        font-family: 'Audiowide', sans-serif;
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        gap: 50px;
+        font-size: 12px;
+        font-weight: 600;
+        align-items: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #101010;
+      }
+
+      .email {
+        font-size: 11px;
+      }
+    }
+
+    .footer-name {
+      width: 90%;
+      margin: 0 auto;
+      font-size: 96px;
+      font-family: 'Audiowide', sans-serif;
+
+    }
+  }
+}

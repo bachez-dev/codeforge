@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .carousel-wrapper {
+    perspective: 1200px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .carousel {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+  }
+
+  /* Pause rotation on hover */
+  .carousel-wrapper:hover .carousel {
+    animation-play-state: paused;
+  }
+
+  .service-card {
+    position: absolute;
+    width: 250px;
+    height: 160px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+
+  /* Arrange cards in a circle (5 cards → 72° apart) */
+  .service-card:nth-child(1) {
+    transform: rotateY(0deg) translateZ(400px);
+  }
+
+  .service-card:nth-child(2) {
+    transform: rotateY(72deg) translateZ(400px);
+  }
+
+  .service-card:nth-child(3) {
+    transform: rotateY(144deg) translateZ(400px);
+  }
+
+  .service-card:nth-child(4) {
+    transform: rotateY(216deg) translateZ(400px);
+  }
+
+  .service-card:nth-child(5) {
+    transform: rotateY(288deg) translateZ(400px);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
+
+<body>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="service-card">
+        <h2>Web Development</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="service-card">
+        <h2>App Development</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="service-card">
+        <h2>UI/UX Design</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="service-card">
+        <h2>Backend Systems</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+      <div class="service-card">
+        <h2>SEO Optimization</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
