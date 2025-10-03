@@ -1,297 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-
-</head>
-
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .gallery-container {
-    width: 100vw;
-    height: 120vh;
-    overflow: hidden;
-    background: #ffffff;
-    position: relative;
-  }
-
-  .gallery-container-heading {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 20;
-    margin-bottom: 30px;
+  <title>Dotted World Map</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fff;
+    }
 
     h2 {
-      color: var(--text-heading);
-      font-size: 1.3rem;
       margin-bottom: 10px;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    .map-container {
+      position: relative;
+      display: inline-block;
+      width: 900px;
+      max-width: 100%;
     }
 
-    button {
-      width: 250px;
-      padding: 15px 10px;
-      border-radius: 50px;
-      background: #1e1e1e;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
-      font-size: 0.9rem;
-      margin-top: 20px;
-      font-weight: 800;
-      outline: none;
-      transition: background 0.3s ease;
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .marker {
+      fill: #007bff;
+      stroke: #fff;
+      stroke-width: 2;
       cursor: pointer;
     }
-  }
 
-  #dragger,
-  #ring,
-  .img,
-  .vignette {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    user-select: none;
-  }
-
-  .gallery-container div {
-    position: absolute;
-  }
-
-  .service-containers {
-    perspective: 2000px;
-    width: 400px;
-    margin-top: 100px;
-    /* matches image size */
-    height: 400px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-  }
-
-  .vignette {
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    pointer-events: none;
-    transform: translateX(-50%);
-    background: linear-gradient(to right,
-        rgba(15, 15, 15, 0) 0%,
-        rgba(0, 0, 0, 0) 20%,
-        rgba(82, 78, 78, 0) 80%,
-        rgba(100, 100, 100, 0) 100%);
-    z-index: 10;
-  }
-
-  #ring {
-    width: 100%;
-    height: 100%;
-    margin-top: 80px;
-    transform-style: preserve-3d;
-    position: relative;
-  }
-
-  .img {
-    width: 300px;
-    height: 300px;
-    background: url('./gallery/Template\ one.PNG');
-    position: absolute;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-
-  }
-
-  .service-card {
-    font-size: 12px;
-
-    h2{
-      text-align: center;
-      margin-bottom: 20px;
+    .tooltip {
+      position: absolute;
+      background: #000;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: none;
+      white-space: nowrap;
+      transform: translate(-50%, -120%);
     }
-  }
-
-  .con{
-    width: 100%;
-    height: 100vh;
-    background: #000;
-  }
-</style>
-
+  </style>
+</head>
 <body>
-  <div class="con">
-    
+  <h2>Get in touch with our team</h2>
+  <p>We have the team and know-how to help you scale 10x faster.</p>
+
+  <div class="map-container">
+    <!-- Dotted world map SVG -->
+    <svg viewBox="0 0 2000 1001" xmlns="http://www.w3.org/2000/svg">
+      <image href="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_dots.svg" 
+             width="2000" height="1001"/>
+      <!-- Example markers -->
+      <circle class="marker" cx="950" cy="400" r="10" data-name="London, UK"></circle>
+      <circle class="marker" cx="1050" cy="420" r="10" data-name="Berlin, Germany"></circle>
+      <circle class="marker" cx="750" cy="500" r="10" data-name="New York, USA"></circle>
+      <circle class="marker" cx="1600" cy="700" r="10" data-name="Sydney, Australia"></circle>
+    </svg>
+    <div class="tooltip" id="tooltip"></div>
   </div>
-    
-  <!-- GALLERY SECTION -->
-  <section class="gallery-container">
-    <div class="gallery-container-heading">
-      <h2>Behind the Designs</h2>
-      <h1>Curious What Else I’ve Created?</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button>Explore</button>
-    </div>
-    <div class="service-containers">
-      <div id="ring">
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-
-        <div class="service-card img">
-          <div class="service-icon service-icon-one"></div>
-          <h2>Web Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem necessitatibus delectus
-            deleniti perspiciatis accusamus illum debitis voluptate, omnis rerum.</p>
-        </div>
-
-
-      </div>
-    </div>
-
-    <div class="vignette"></div>
-    <div id="dragger"></div>
-  </section>
 
   <script>
-    let xPos = 0;
-    const total = 10;
-    const ring = document.querySelector("#ring");
-    const images = document.querySelectorAll(".img");
+    const markers = document.querySelectorAll(".marker");
+    const tooltip = document.getElementById("tooltip");
 
-    // Parameters for curve
-    const radius = 600; // controls how curved the arc is
-    const angleStep = 360 / total;
-
-    // Arrange items initially
-    gsap.set(images, {
-      rotationY: (i) => i * -angleStep,
-      transformOrigin: `50% 50% ${radius}px`,
-      backfaceVisibility: "hidden"
-    });
-
-    // Keep track of "scroll" position
-    let scrollOffset = 0;
-
-    function updatePositions() {
-      images.forEach((img, i) => {
-        let angle = (i * -angleStep) + scrollOffset;
-        gsap.set(img, {
-          rotationY: angle,
-          transformOrigin: `50% 50% ${radius}px`
-        });
+    markers.forEach(marker => {
+      marker.addEventListener("mouseenter", e => {
+        tooltip.style.display = "block";
+        tooltip.innerText = marker.getAttribute("data-name");
       });
-    }
-
-    // Initial position
-    updatePositions();
-
-    Draggable.create(dragger, {
-      type: "x",
-      inertia: true,
-      onDragStart: (e) => {
-        if (e.touches) e.clientX = e.touches[0].clientX;
-        xPos = Math.round(e.clientX);
-      },
-      onDrag: (e) => {
-        if (e.touches) e.clientX = e.touches[0].clientX;
-        const delta = Math.round(e.clientX) - xPos;
-
-        // move images left/right
-        scrollOffset += delta * 0.2; // adjust 0.2 for speed
-        updatePositions();
-
-        xPos = Math.round(e.clientX);
-      },
-      onDragEnd: () => {
-        gsap.set(dragger, { x: 0, y: 0 });
-      }
+      marker.addEventListener("mousemove", e => {
+        tooltip.style.left = e.pageX + "px";
+        tooltip.style.top = e.pageY + "px";
+      });
+      marker.addEventListener("mouseleave", () => {
+        tooltip.style.display = "none";
+      });
     });
   </script>
 </body>
-
 </html>

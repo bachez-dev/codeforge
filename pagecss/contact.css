@@ -10,7 +10,7 @@
 
 .navigation-hero-section {
   width: 100%;
-  height: 110vh;
+  height: 105vh;
   /* background: radial-gradient(circle,
       #0D0D0D 0%,
       #240046 35%,
@@ -102,18 +102,24 @@
 
   .hero-content {
     width: 95%;
-    height: calc(110vh - 80px);
+    height: calc(105vh - 80px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
     align-items: center;
     text-align: center;
     color: #101010;
+    font-family: 'Poppins', sans-serif;
 
     .content {
       width: 80%;
       height: 100px;
+    }
+
+    h3 {
+      font-size: 12px;
     }
 
 
@@ -138,7 +144,10 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-      background: #101010;
+      background: url(../CodeforgeImages/svg-to-png.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       margin: 0 auto;
       border-radius: 20px;
       padding: 5px;
@@ -167,7 +176,9 @@
     .chat-support {
       width: 230px;
       height: 100%;
-      background: #EBE5E7;
+      background: #ffffff;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;
       border-radius: 10px;
       padding: 20px;
 
@@ -175,6 +186,7 @@
         width: 40px;
         height: 30px;
         background: white;
+        border: 1px solid #ccc;
         margin-bottom: 30px;
         border-radius: 10px;
       }
@@ -199,6 +211,24 @@
         border-radius: 5px;
         cursor: pointer;
       }
+
+
+    }
+
+    .email button {
+      padding: 6px 35px;
+      background: #101010;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-support:hover {
+      transform: translateY(-2px);
+      transition: all .18s ease;
     }
   }
 }

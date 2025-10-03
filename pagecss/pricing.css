@@ -180,9 +180,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
 
-      &:hover {
-        transform: scaleY(1.1);
-      }
 
       p {
         font-size: 11px;
@@ -297,15 +294,19 @@
     position: relative;
 
     .add-ons-card {
-      width: 400px;
+      width:350px;
       height: 350px;
       background: rgba(255, 255, 255, 0.06);
       border-radius: 10px;
       padding-top: 30px;
       padding-left: 40px;
 
+      h2{
+        font-size: 13px;
+      }
+
       p {
-        font-size: 11px;
+        font-size: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
       }
@@ -318,7 +319,7 @@
       ul {
         list-style-type: none;
         margin-top: 10px;
-        font-size: 11px;
+        font-size: 10px;
         line-height: 2;
         margin-bottom: 20px;
         padding-left: 10px;
@@ -326,7 +327,7 @@
 
 
       button {
-        padding: 6px 130px;
+        padding: 6px 100px;
         border-radius: 20px;
         font-size: 12px;
         font-weight: 600;
