@@ -1,87 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Dotted World Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Questions</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fff;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    .map-container {
-      position: relative;
-      display: inline-block;
-      width: 900px;
-      max-width: 100%;
-    }
-
-    svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .marker {
-      fill: #007bff;
-      stroke: #fff;
-      stroke-width: 2;
-      cursor: pointer;
-    }
-
-    .tooltip {
-      position: absolute;
-      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #1a1a1a;
       color: #fff;
-      padding: 6px 10px;
-      border-radius: 4px;
+    }
+
+    .faq-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .faq-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      margin-bottom: 60px;
+      gap: 40px;
+    }
+
+    .faq-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #888;
+      text-transform: uppercase;
+    }
+
+    .faq-title {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .faq-subtitle {
+      font-size: 16px;
+      color: #e74c3c;
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    .faq-items {
+      border-top: 1px solid #333;
+    }
+
+    .faq-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 150px;
+      align-items: center;
+      padding: 30px 40px;
+      border-bottom: 1px solid #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #1a1a1a;
+    }
+
+    .faq-item.light {
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+    }
+
+    .faq-item.light .faq-number {
+      color: #e74c3c;
+    }
+
+    .faq-item.light .faq-question {
+      color: #e74c3c;
+    }
+
+    .faq-item.light .faq-link {
+      color: #1a1a1a;
+    }
+
+    .faq-item.active {
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+    }
+
+    .faq-item.active .faq-number {
+      color: #e74c3c;
+    }
+
+    .faq-item.active .faq-question {
+      color: #e74c3c;
+    }
+
+    .faq-number {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #666;
+    }
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+
+    .faq-link {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .faq-link:hover {
+      opacity: 0.7;
+    }
+
+    .faq-answer {
+      grid-column: 2;
+      padding: 0 40px 30px 40px;
       font-size: 14px;
+      line-height: 1.6;
+      color: #999;
       display: none;
-      white-space: nowrap;
-      transform: translate(-50%, -120%);
+      background-color: #f5f5f5;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+      color: #666;
+    }
+
+    .faq-item.active .faq-answer {
+      background-color: #f5f5f5;
+    }
+
+    @media (max-width: 768px) {
+      .faq-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .faq-title {
+        font-size: 36px;
+      }
+
+      .faq-subtitle {
+        text-align: center;
+      }
+
+      .faq-item {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .faq-number {
+        margin-bottom: 10px;
+      }
+
+      .faq-link {
+        margin-top: 10px;
+      }
+
+      .faq-answer {
+        grid-column: 1;
+        padding: 0 20px 20px 20px;
+      }
     }
   </style>
 </head>
-<body>
-  <h2>Get in touch with our team</h2>
-  <p>We have the team and know-how to help you scale 10x faster.</p>
 
-  <div class="map-container">
-    <!-- Dotted world map SVG -->
-    <svg viewBox="0 0 2000 1001" xmlns="http://www.w3.org/2000/svg">
-      <image href="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_dots.svg" 
-             width="2000" height="1001"/>
-      <!-- Example markers -->
-      <circle class="marker" cx="950" cy="400" r="10" data-name="London, UK"></circle>
-      <circle class="marker" cx="1050" cy="420" r="10" data-name="Berlin, Germany"></circle>
-      <circle class="marker" cx="750" cy="500" r="10" data-name="New York, USA"></circle>
-      <circle class="marker" cx="1600" cy="700" r="10" data-name="Sydney, Australia"></circle>
-    </svg>
-    <div class="tooltip" id="tooltip"></div>
+<body>
+  <div class="faq-container">
+    <div class="faq-header">
+      <div class="faq-label">Quick Answers</div>
+      <h1 class="faq-title">Common Questions</h1>
+      <div class="faq-subtitle">everything you need<br>to know</div>
+    </div>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <div class="faq-number">01</div>
+        <div class="faq-question">How long does the course take to complete?</div>
+        <a href="#" class="faq-link">LEARN MORE ></a>
+        <div class="faq-answer">The course typically takes 8-12 weeks to complete, depending on your pace and commitment
+          level. You can work through the material at your own speed.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">02</div>
+        <div class="faq-question">What makes Titanium different from other crypto courses?</div>
+        <a href="#" class="faq-link">LEARN MORE ></a>
+        <div class="faq-answer">Titanium delivers a clear, structured learning path focused on real-world application.
+          You'll build practical skills you can use to invest smartly and navigate the digital economy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">03</div>
+        <div class="faq-question">Is this course suitable for complete beginners?</div>
+        <a href="#" class="faq-link">LEARN MORE ></a>
+        <div class="faq-answer">Yes, absolutely. This course is designed for beginners with no prior cryptocurrency
+          knowledge. We start from the fundamentals and build up gradually.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">04</div>
+        <div class="faq-question">Will I get access to future updates?</div>
+        <a href="#" class="faq-link">LEARN MORE ></a>
+        <div class="faq-answer">Yes, once you enroll, you'll have lifetime access to all course materials and future
+          updates at no additional cost.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">05</div>
+        <div class="faq-question">Is there a money-back guarantee?</div>
+        <a href="#" class="faq-link">LEARN MORE ></a>
+        <div class="faq-answer">We offer a 30-day money-back guarantee if you're not satisfied with the course. No
+          questions asked.</div>
+      </div>
+    </div>
   </div>
 
   <script>
-    const markers = document.querySelectorAll(".marker");
-    const tooltip = document.getElementById("tooltip");
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    markers.forEach(marker => {
-      marker.addEventListener("mouseenter", e => {
-        tooltip.style.display = "block";
-        tooltip.innerText = marker.getAttribute("data-name");
-      });
-      marker.addEventListener("mousemove", e => {
-        tooltip.style.left = e.pageX + "px";
-        tooltip.style.top = e.pageY + "px";
-      });
-      marker.addEventListener("mouseleave", () => {
-        tooltip.style.display = "none";
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all items
+        faqItems.forEach(i => i.classList.remove('active'));
+
+        // Add active class to clicked item
+        item.classList.add('active');
       });
     });
   </script>
 </body>
+
 </html>
